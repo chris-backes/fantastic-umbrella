@@ -1,5 +1,4 @@
 # E-commerce Back End - ORM
-![License](https://img.shields.io/github/license/chris-backes/fantastic-umbrella)
 
 Repo: https://github.com/chris-backes/fantastic-umbrella
 
