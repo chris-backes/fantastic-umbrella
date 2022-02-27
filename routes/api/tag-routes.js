@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     res.json(tagData)
   } catch (err) {
     console.log(err)
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
-    const tagGetId = await Product.findOne({
+    const tagGetId = await Tag.findOne({
       where: {
         id: req.params.id
       },
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
     res.json(tagGetId)
   } catch (err) {
     console.log(err)
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
     res.json(postTag)
   } catch (err) {
     console.log(err)
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -70,14 +70,14 @@ router.put('/:id', async (req, res) => {
     res.json(updateTag)
   } catch (err) {
     console.log(err)
-    res.json(400).json(err)
+    res.json(500).json(err)
   }
 });
 
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
   try {
-    const tagDestroy = await Product.destroy({
+    const tagDestroy = await Tag.destroy({
       where: {
         id: req.params.id,
       },
@@ -89,7 +89,7 @@ router.delete('/:id', async (req, res) => {
     res.json(tagDestroy);
   } catch (err) {
     console.log(err);
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
